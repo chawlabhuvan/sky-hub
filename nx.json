@@ -23,10 +23,7 @@
 		"projects": ["libs/ui/*/*", "packages/*"],
 		"releaseTagPattern": "release/{projectName}/{version}",
 		"changelog": {
-			"workspaceChangelog": {
-				"createRelease": "github",
-				"automaticFromRef": "HEAD"
-			}
+			"projectChangelogs": true
 		},
 		"version": {
 			"generatorOptions": {
@@ -37,6 +34,6 @@
 			"conventionalCommits": true
 		}
 	},
-	"defaultBase": "master",
+	"defaultBase": "main",
 	"nxCloudAccessToken": ""
 }
