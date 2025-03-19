@@ -1,0 +1,42 @@
+{
+	"$schema": "./node_modules/nx/schemas/nx-schema.json",
+	"targetDefaults": {
+		"lint": {
+			"dependsOn": ["^lint"],
+			"cache": true
+		},
+		"test": {
+			"dependsOn": ["^test"],
+			"cache": true
+		},
+		"build": {
+			"dependsOn": ["^build"],
+			"cache": true
+		},
+		"transform": {
+			"dependsOn": ["^transform"],
+			"cache": true
+		}
+	},
+	"release": {
+		"projectsRelationship": "independent",
+		"projects": ["libs/ui/*/*", "packages/*"],
+		"releaseTagPattern": "release/{projectName}/{version}",
+		"changelog": {
+			"workspaceChangelog": {
+				"createRelease": "github",
+				"automaticFromRef": "HEAD"
+			}
+		},
+		"version": {
+			"generatorOptions": {
+				"skipLockFileUpdate": true,
+				"fallbackCurrentVersion": "disk"
+			},
+			"preVersionCommand": "pnpm build",
+			"conventionalCommits": true
+		}
+	},
+	"defaultBase": "master",
+	"nxCloudAccessToken": ""
+}

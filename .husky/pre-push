@@ -1,0 +1,29 @@
+LC_ALL=C
+bold=$(tput bold)
+normal=$(tput sgr0)
+RED='\033[0;31m' # For errors
+YLW='\033[0;33m' # For warnings
+BLU='\033[0;34m' # For infos
+NC='\033[0m' # To reset
+
+local_branch_name="$(git rev-parse --abbrev-ref HEAD)"
+
+# Add check for master branch
+if [ "$local_branch_name" = "master" ]; then
+  echo -e "\n${RED}Direct push to master is not allowed. Push aborted.${NC}"
+  echo -e "\n${YLW}If you are sure, you can skip this check by using the --no-verify flag:${NC}"
+	echo -e "${BLU}yarn commit --no-verify${NC}"
+	exit 1
+fi
+
+# does not contain master
+valid_branch_regex='^(develop|feature|chore|fix|test|lib|docs|perf|release|hotfix)\/[a-z0-9._-]+$'
+
+message="\nBranch names in this project must adhere to this contract: ${bold}${BLU}$valid_branch_regex.${NC}${normal} \n\nRename your branch and try again. \n"
+
+if [[ ! $local_branch_name =~ $valid_branch_regex ]]; then
+  echo -e "${RED}$message"
+  exit 1
+fi
+
+exit 0

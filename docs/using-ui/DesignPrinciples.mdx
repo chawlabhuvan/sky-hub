@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/blocks';
+import { Callout } from '../helpers/Callout';
+
+<Meta title='Using GenesisX UI/Design Principles' />
+
+# Design Principles
+
+- **Consistency**: Centralizing a piece of code always brings in consistency as
+  long as the appropriate version is used everywhere.
+
+- **Reusability:** A centralized component library ensures that the components
+  are not just reusable inside 1 app but across multiple apps.
+
+- **Flexibility:** Comes with [TailwindCSS](https://tailwindcss.com/) as the
+  styling solution OOTB and due to it being a utility-first CSS framework, gives
+  room to other styling solutions like
+  [StyledComponents](https://styled-components.com/),
+  [Emotion](https://emotion.sh/docs/introduction) etc.
+
+- **Modularity:** Use/import the components as and when you need them. Each
+  component can be used as a separate shared package inside a monorepo or can be
+  published as a NPM package and be used as a dependency in a stanalone project.
+  Create headless and modular components with tools like
+  [radix-ui](https://www.radix-ui.com/), [headless ui](https://headlessui.com/),
+  [base ui](https://mui.com/base-ui/getting-started/) etc.
+
+- **Maintainability:** Even when your projects expand and become more complex,
+  your component library remains coherent and managable. Tools like
+  [Nx](https://nx.dev/) and the concept of
+  [workspaces](https://turbo.build/repo/docs/handbook/workspaces) makes it
+  extremely easy to maintain a design system codebase.
+
+<Callout kind='error'>
+	This is just a sample page. Edit or remove this page based on your
+	requirement.
+</Callout>

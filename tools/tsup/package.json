@@ -1,0 +1,15 @@
+{
+	"name": "@sky-hub/tsup",
+	"version": "0.1.0",
+	"private": true,
+	"main": "index.js",
+	"types": "index.d.ts",
+	"type": "module",
+	"files": [
+		"*"
+	],
+	"devDependencies": {},
+	"dependencies": {
+		"tsup": "8"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"extends": "stylelint-config-standard",
+	"rules": {
+		"no-duplicate-selectors": true,
+		"function-url-quotes": "always",
+		"font-family-name-quotes": "always-unless-keyword",
+		"font-family-no-duplicate-names": null,
+		"comment-whitespace-inside": "always",
+		"property-no-vendor-prefix": null,
+		"at-rule-no-unknown": [
+			true,
+			{
+				"ignoreAtRules": ["tailwind"]
+			}
+		]
+	}
+}

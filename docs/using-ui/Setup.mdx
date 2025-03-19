@@ -1,0 +1,109 @@
+import { Meta } from '@storybook/blocks';
+import { Callout } from '../helpers/Callout';
+
+<Meta title='Using GenesisX UI/Setup' />
+
+# Setup
+
+## 1. Setup TailwindCSS and PostCSS
+
+- If you are creating apps in the same repository, then add
+  `@sky-hub/tailwind` as the dependency in the app's `package.json`:
+
+  ```js
+  "dependencies": {
+    "@sky-hub/tailwind": "workspace:*",
+    // other dependencies...
+  }
+  ```
+
+  <br />
+  <Callout kind='info'>
+  	A symlink for tailwind package is already created at the root level.
+  </Callout>
+
+- Run the install command (yarn install)
+
+- Create a `tailwind.config.cjs` file in the app
+
+- Import the linked package:
+
+  ```js
+  const tailwindConfig = require("@sky-hub/tailwind/config");
+
+  module.exports = tailwindConfig;
+  ```
+
+- Create a `postcss.config.cjs` file in the app and add the following:
+
+  ```js
+  const postcssConfig = require("@sky-hub/tailwind/config");
+
+  module.exports = postcssConfig;
+  ```
+
+<Callout kind='warning'>
+	<strong>Recommended:</strong> If the apps are going to be in different
+	monorepo (repository), then make sure to publish `@sky-hub/tailwind` package
+	(and other necessary packages), install them as any other dependency in the
+	repo and then use them as shown above.
+</Callout>
+
+## 2. CSS Setup
+
+- Go to your **\_app.tsx** file or the root file and import the following:
+
+  ```js
+  import "@sky-hub/tailwind/styles/tailwind.css";
+  ```
+
+<Callout kind='warning'>
+	<strong>Recommended:</strong> If you have your own custom css to be added, then create the necessary css file/s and import these files at the very top of a global css file and include other css if any.
+
+    Let's say you have the following css files in your app:
+    - src/styles/header.css
+    - src/styles/footer.css
+    - src/styles/main.css
+
+    You can create a new file called `tailwind.css` in your src and import the css files as:
+
+    ```js
+    /* css file exported from the package */
+    @import '@sky-hub/tailwind/styles/tailwind.css';
+    /* Your local css files */
+    @import "./styles/header.css";
+    @import "./styles/footer.css";
+    @import "./styles/main.css";
+
+    /* Your custom styles if any */
+    body {
+			background-color: #f0f0f0;
+		}
+		```
+		Finally, go to your **\_app.tsx** file or the root file and import the following:
+
+    ```js
+  	import './tailwind.css';
+		```
+</Callout>
+
+## 3. Use The components
+
+- Go to the file where you want to use the components that you have created in
+your ui library and import as follows:
+
+```js
+import { Button } from "@sky-hub/button";
+```
+
+- Checkout the documentation on [Button](?path=/docs/component-button--docs) to
+  get the appropriate code for your page.
+
+## 4. Add More
+
+Go to libs/ui and add or compose new components based on the requirements or
+simply use
+
+```js
+pnpm generate
+```

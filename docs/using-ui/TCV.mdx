@@ -1,0 +1,17 @@
+import { Meta } from '@storybook/blocks';
+import { Callout } from '../helpers/Callout';
+
+export const isLocal = window.location.hostname === 'localhost';
+export const tcvUrl = isLocal ? 'http://localhost:3000' : './tcv';
+
+<Meta title='Using GenesisX UI/Tailwind Config Viewer' />
+
+This <a href={tcvUrl} target="_blank">page</a> provides a visual representation
+of our Tailwind CSS configuration file.
+
+<Callout>
+	The visualization that you are seeing right now, is coming from {tcvUrl} which
+	is running parallely with the storybook app.
+</Callout>
+
+<iframe id='tcv' src={tcvUrl} width='100%' height='100%' />

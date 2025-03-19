@@ -1,0 +1,11 @@
+{
+	"extends": "@sky-hub/typescript/esm-library.json",
+	"exclude": [
+		"**/*.test.ts",
+		"**/*.test.tsx",
+		"**/*.stories.tsx",
+		"**/*.spec.ts",
+		"**/*.spec.tsx",
+		"**/test/*"
+	]
+}

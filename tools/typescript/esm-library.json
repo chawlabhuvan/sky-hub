@@ -1,0 +1,12 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "ESM Lib",
+	"extends": "./base.json",
+	"compilerOptions": {
+		"outDir": "./dist",
+		"lib": ["es2022", "dom", "dom.iterable"],
+		"module": "ESNext",
+		"target": "ES2022",
+		"moduleResolution": "Bundler"
+	}
+}

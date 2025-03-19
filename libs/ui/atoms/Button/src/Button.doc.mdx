@@ -1,0 +1,40 @@
+import { Canvas, Meta } from "@storybook/addon-docs";
+import { Button } from "./Button";
+import * as ButtonStories from "./Button.stories";
+import { ArgTypes } from "@storybook/blocks";
+
+<Meta of={ButtonStories} />
+
+# Button
+
+A brief introduction to your component.
+
+## Install
+
+```sh
+npm install @sky-hub/button
+```
+
+## Import
+
+```js
+import { Button } from "@sky-hub/button";
+```
+
+## Props
+
+<ArgTypes of={Button} />
+
+## Usage
+
+### Default
+
+<Canvas of={ButtonStories.Default} />
+
+### Sizes
+
+<Canvas of={ButtonStories.Sizes} />
+
+### Variants
+
+<Canvas of={ButtonStories.Variants} />

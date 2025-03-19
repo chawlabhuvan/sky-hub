@@ -1,0 +1,15 @@
+# Check if pnpm is installed
+if ! command -v "pnpm" &>/dev/null; then
+    echo "⚠️  pnpm is not installed. Skipping dependency check."
+    exit 0
+fi
+
+# Check if package.json or pnpm-lock.yaml has changed
+changed_files=$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)
+
+if echo "$changed_files" | grep -q "package.json\|pnpm-lock.yaml"; then
+    echo "📦 Package files changed. Installing dependencies..."
+    cd "$(dirname "$0")/.." && pnpm install
+else
+    echo "✅ No package changes detected. Skipping install."
+fi
