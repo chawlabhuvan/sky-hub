@@ -1,0 +1,38 @@
+{
+  "name": "@sky-hub/svg",
+  "version": "0.1.0",
+  "description": "a package to optimze and convert svg into react component",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "package.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "pnpm transform && tsup",
+    "clean": "rimraf dist",
+    "postbuild": "node postbuild.js",
+    "transform": "node transform.js"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^8.1.0",
+    "glob": "^10.3.10",
+    "svgo": "^3.2.0"
+  },
+  "exports": {
+    "./CloudBolt": {
+      "import": {
+        "types": "./dist/CloudBolt.d.ts",
+        "default": "./dist/CloudBolt.js"
+      },
+      "require": {
+        "types": "./dist/CloudBolt.d.cts",
+        "default": "./dist/CloudBolt.cjs"
+      }
+    }
+  }
+}

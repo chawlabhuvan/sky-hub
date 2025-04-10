@@ -1,0 +1,29 @@
+{
+	"docs/**/*.{js,jsx,ts,tsx,mjs,mts,cjs,cts,md,mdx}": [
+		"eslint --config eslint.config.mjs --fix --cache --cache-location node_modules/.cache/eslint",
+		"prettier --config prettier.config.mjs --write --cache  --cache-location node_modules/.cache/prettier"
+	],
+	"tools/**/*.{js,jsx,ts,tsx,mjs,mts,cjs,cts}": [
+		"eslint --config eslint.config.mjs --fix --cache --cache-location node_modules/.cache/eslint",
+		"prettier --config prettier.config.mjs --write --cache  --cache-location node_modules/.cache/prettier"
+	],
+	"tools/**/*.{json,yaml}": ["prettier --write"],
+	"packages/**/*.{js,jsx,ts,tsx,mjs,mts,cjs,cts}": [
+		"eslint --config eslint.config.mjs --fix --cache --cache-location node_modules/.cache/eslint",
+		"prettier --config prettier.config.mjs --write --cache  --cache-location node_modules/.cache/prettier"
+	],
+	"packages/**/*.{css,scss}": ["stylelint --config .stylelintrc --fix"],
+	"packages/**/*.{json,yaml}": [
+		"prettier --config prettier.config.mjs --write --cache  --cache-location node_modules/.cache/prettier"
+	],
+	"libs/**/*.{js,jsx,ts,tsx,mjs,mts,cjs,cts}": [
+		"eslint --config eslint.config.mjs --fix --cache --cache-location node_modules/.cache/eslint",
+		"prettier --config prettier.config.mjs --write --cache  --cache-location node_modules/.cache/prettier"
+	],
+	"libs/**/*.{css,scss}": [
+		"stylelint --config .stylelintrc --fix --cache --cache-location node_modules/.cache/stylelint"
+	],
+	"libs/**/*.{json,yaml}": [
+		"prettier --config prettier.config.mjs --write --cache  --cache-location node_modules/.cache/prettier"
+	]
+}

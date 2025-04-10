@@ -1,0 +1,11 @@
+{
+	"name": "@sky-hub/typescript",
+	"version": "0.1.0",
+	"private": true,
+	"main": "base.json",
+	"files": [
+		"*"
+	],
+	"devDependencies": {},
+	"dependencies": {}
+}

@@ -1,0 +1,54 @@
+<script>
+  window.global = window;
+</script>
+
+<style>
+  .sbdocs-wrapper {
+    padding: 30px 20px !important;
+  }
+
+  .sbdocs-content {
+    display: grid !important;
+    grid-template-columns: 100% 0;
+    gap: 24px;
+    max-width: 1200px !important;
+    height: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .sbdocs-content {
+      grid-template-columns: minmax(0, auto) 100px;
+    }
+  }
+
+  #doc-container {
+    width: 100%;
+  }
+
+  .docblock-source {
+    border: 1px solid #f2f4f5 !important;
+    box-shadow: none !important;
+    background-color: #f2f4f5 !important;
+  }
+
+  .sbdocs-wrapper:has(iframe#tcv) > div {
+    max-width: unset !important;
+    height: auto;
+    grid-template-columns: 100%;
+  }
+
+  #doc-container > h1 {
+    color: #007aff !important;
+    font-weight: 700 !important;
+  }
+
+  #doc-container > h2,
+  #doc-container > h3,
+  #doc-container > h4,
+  #doc-container > h5 {
+    color: #6c757d !important;
+    font-weight: 700 !important;
+  }
+</style>
+
+<link href="../packages/tailwind/styles/normalize.css" rel="stylesheet" />

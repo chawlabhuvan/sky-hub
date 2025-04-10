@@ -1,0 +1,4 @@
+{
+	"extends": "@sky-hub/typescript/react-library.json",
+	"include": ["components/*.tsx"]
+}

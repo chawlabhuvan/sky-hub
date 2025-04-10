@@ -1,0 +1,33 @@
+import { Meta } from '@storybook/blocks';
+import { Card } from './helpers/Card';
+
+<Meta title='Getting Started' />
+
+<div className="flex flex-col">
+<p className="text-center text-5xl">Create <span className="text-main text-5xl">accessible</span> React apps with ease</p>
+<p className="text-center text-lg"><span className="text-main text-xl">GenesisX UI</span> is a React based design system focused on **_reusabilty_**, **_consistency_**, **_flexibility_**, **_modularity_** and **_scalability_** using **TailwindCSS** and **Radix UI**.</p>
+
+</div>
+
+# Getting started
+
+This is the GenesisX UI documentation. Add custom helper components in
+**./helpers**.
+
+<div className='flex flex-row flex-wrap gap-xl'>
+	<Card
+		href='/?path=/docs/using-genesisx-ui-setup--docs'
+		description='Enable GenesisX UI on your project'
+		title='Setup'
+	/>
+	<Card
+		href='/?path=/docs/using-genesisx-ui-tailwind-config-viewer--docs'
+		description='Visualize colors, spacing, typography, etc.'
+		title='Design Tokens'
+	/>
+	<Card
+		href='/?path=/docs/using-genesisx-ui-design-principles--docs'
+		description='Design Principles'
+		title='Have a peek at our design principles'
+	/>
+</div>
